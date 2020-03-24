@@ -8,7 +8,7 @@ import { CssBaseline } from '@material-ui/core';
 import { store } from './redux/store';
 
 import { MainLayout } from './components/layout/MainLayout/MainLayout';
-import { Homepage } from './components/views/Homepage/Homepage';
+import Homepage from './components/views/Homepage/HomepageContainer';
 
 const theme = createMuiTheme({
   palette: {

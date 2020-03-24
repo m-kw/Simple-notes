@@ -1,22 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Container from '@material-ui/core/Container';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+
 import clsx from 'clsx';
 
 import styles from './Homepage.module.scss';
+import { CardContent } from '@material-ui/core';
 
-const Component = ({ className }) => {
+const Homepage = ({ className, notes }) => {
   return (
-    <div className={clsx(className, styles.root)}>
-      <h2>Homepage</h2>
-    </div>
+    <Container maxWidth="lg">
+      <div className={clsx(className, styles.root)}>
+
+        {notes.map(el => (
+          <Card key={el.id} className={styles.note} elevation={3}>
+            <CardHeader
+              title={el.title}
+            />
+            <CardContent>
+              {el.content}
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </Container>
   );
 };
 
-Component.propTypes = {
+Homepage.propTypes = {
   className: PropTypes.string,
+  notes: PropTypes.array,
 };
 
-export {
-  Component as Homepage,
-};
+export default Homepage;
