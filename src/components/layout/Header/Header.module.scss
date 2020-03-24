@@ -1,4 +1,13 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  background: $background-dark;
+  width: 100%;
+  display: flex;
+
+  .title {
+    text-transform: uppercase;
+    color: $font-light;
+    margin: 20px auto;
+  }
+}

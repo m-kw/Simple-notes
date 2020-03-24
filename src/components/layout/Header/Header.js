@@ -8,7 +8,7 @@ import styles from './Header.module.scss';
 const Component = ({ className }) => {
   return (
     <div className={clsx(className, styles.root)}>
-      <h2>Header</h2>
+      <h2 className={styles.title}>My notes</h2>
     </div>
   );
 };

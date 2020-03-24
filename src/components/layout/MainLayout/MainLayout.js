@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 
 import clsx from 'clsx';
 
+import { Header } from '../Header/Header';
+
 import styles from './MainLayout.module.scss';
 
 const Component = ({ className }) => {
   return (
     <div className={clsx(className, styles.root)}>
-      <h2>MainLayout</h2>
+      <Header />
     </div>
   );
 };
