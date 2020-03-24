@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Container from '@material-ui/core/Container';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
 import { Note } from '../../common/Note/Note';
 
@@ -20,6 +22,15 @@ const Homepage = ({ className, notes }) => {
             content={el.content}
           />
         ))}
+
+        <Fab
+          color="primary"
+          aria-label="add"
+          className={styles.button}
+          href="/note/app"
+        >
+          <AddIcon />
+        </Fab>
 
       </div>
     </Container>

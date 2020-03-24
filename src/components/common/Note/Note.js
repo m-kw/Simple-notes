@@ -11,7 +11,7 @@ import clsx from 'clsx';
 
 import styles from './Note.module.scss';
 
-const Component = ({ className, children, title, content }) => {
+const Component = ({ className, title, content }) => {
   return (
     <div className={clsx(className, styles.root)}>
       <Card className={styles.note} elevation={3}>
@@ -44,7 +44,6 @@ const Component = ({ className, children, title, content }) => {
 
 Component.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node,
   title: PropTypes.string,
   content: PropTypes.string,
 };
