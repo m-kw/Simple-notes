@@ -2,13 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Container from '@material-ui/core/Container';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
+
+import { Note } from '../../common/Note/Note';
 
 import clsx from 'clsx';
 
 import styles from './Homepage.module.scss';
-import { CardContent } from '@material-ui/core';
 
 const Homepage = ({ className, notes }) => {
   return (
@@ -16,15 +15,12 @@ const Homepage = ({ className, notes }) => {
       <div className={clsx(className, styles.root)}>
 
         {notes.map(el => (
-          <Card key={el.id} className={styles.note} elevation={3}>
-            <CardHeader
-              title={el.title}
-            />
-            <CardContent>
-              {el.content}
-            </CardContent>
-          </Card>
+          <Note key={el.id}
+            title={el.title}
+            content={el.content}
+          />
         ))}
+
       </div>
     </Container>
   );

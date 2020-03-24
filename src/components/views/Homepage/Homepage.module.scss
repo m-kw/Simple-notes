@@ -5,14 +5,4 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
-  .note {
-    color: $font-dark;
-    margin: 20px;
-    padding: 15px;
-
-    .title {
-      font-weight: bold;
-    }
-  }
 }

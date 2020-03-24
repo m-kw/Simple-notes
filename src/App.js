@@ -12,7 +12,8 @@ import Homepage from './components/views/Homepage/HomepageContainer';
 
 const theme = createMuiTheme({
   palette: {
-    primary: { main: '#2B4C6F' },
+    primary: { main: '#2c2c54' },
+    secondary: { main: '#218c74' },
   },
 });
 
