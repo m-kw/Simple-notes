@@ -1,4 +1,4 @@
-import { combineReducers, createStore, applyMiddleware } from 'redux';
+import { combineReducers, createStore } from 'redux';
 
 import { initialState } from './initialState';
 import { reducer as notesReducer } from './notesRedux';
