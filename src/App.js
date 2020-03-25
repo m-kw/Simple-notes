@@ -9,7 +9,7 @@ import { store } from './redux/store';
 
 import { MainLayout } from './components/layout/MainLayout/MainLayout';
 import Homepage from './components/views/Homepage/HomepageContainer';
-import NoteAdd from './components/views/NoteAdd/NoteAdd';
+import NoteAdd from './components/views/NoteAdd/NoteAddContainer';
 
 const theme = createMuiTheme({
   palette: {

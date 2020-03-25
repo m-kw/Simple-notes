@@ -1,5 +1,7 @@
+import { initialState } from './initialState';
+
 /* selectors */
-export const getAll = ({ notes }) => notes;
+export const getAll = ({ notes }) => initialState.notes;
 
 /* action name creator */
 const reducerName = 'notes';
@@ -15,9 +17,11 @@ export const addNote = payload => ({ payload, type: ADD_NOTE });
 
 /* reducer */
 export const reducer = (statePart = [], action = {}) => {
+  console.log('action', action);
+  console.log('state', statePart);
   switch (action.type){
     case ADD_NOTE: {
-      return statePart;
+      return [ ...statePart, action.payload];
     }
     default:
       return statePart;

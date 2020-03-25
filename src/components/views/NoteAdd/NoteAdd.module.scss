@@ -1,4 +1,23 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    margin: 20px;
+    padding: 20px;
+    min-width: 500px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+
+    .input {
+      margin: 10px 0;
+    }
+  }
+}
