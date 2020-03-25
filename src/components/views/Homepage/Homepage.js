@@ -23,15 +23,6 @@ const Homepage = ({ className, notes }) => {
           />
         ))}
 
-        <Fab
-          color="primary"
-          aria-label="add"
-          className={styles.button}
-          href="/note/app"
-        >
-          <AddIcon />
-        </Fab>
-
       </div>
     </Container>
   );
