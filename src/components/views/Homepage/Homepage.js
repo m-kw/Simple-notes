@@ -13,7 +13,7 @@ import clsx from 'clsx';
 
 import styles from './Homepage.module.scss';
 
-const Homepage = ({ className, notes }) => {
+const Homepage = ({ className, notes, removeNote }) => {
 
   const [open, setOpen] = React.useState(false);
 
@@ -31,8 +31,10 @@ const Homepage = ({ className, notes }) => {
 
         {notes.map(el => (
           <Note key={el.id}
+            id={el.id}
             title={el.title}
             content={el.content}
+            removeNote={removeNote}
           />
         ))}
 
@@ -61,6 +63,7 @@ const Homepage = ({ className, notes }) => {
 Homepage.propTypes = {
   className: PropTypes.string,
   notes: PropTypes.array,
+  removeNote: PropTypes.func,
 };
 
 export default Homepage;

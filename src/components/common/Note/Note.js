@@ -11,7 +11,14 @@ import clsx from 'clsx';
 
 import styles from './Note.module.scss';
 
-const Component = ({ className, title, content }) => {
+const Component = ({ className, id, title, content, removeNote }) => {
+  console.log('id', id);
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    removeNote(id);
+  };
+
   return (
     <div className={clsx(className, styles.root)}>
       <Card className={styles.note} elevation={3}>
@@ -26,6 +33,7 @@ const Component = ({ className, title, content }) => {
           color="primary"
           className={styles.button}
           startIcon={<DeleteIcon />}
+          onClick={(e) => handleDelete(e, id)}
         >
           Delete
         </Button>
@@ -44,8 +52,10 @@ const Component = ({ className, title, content }) => {
 
 Component.propTypes = {
   className: PropTypes.string,
+  id: PropTypes.string,
   title: PropTypes.string,
   content: PropTypes.string,
+  removeNote: PropTypes.func,
 };
 
 export {
