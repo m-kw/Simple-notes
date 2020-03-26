@@ -37,45 +37,43 @@ class NoteAdd extends React.Component {
     const { note } = this.state;
 
     return (
-      <Container maxWidth="lg">
-        <div className={clsx(className, styles.root)}>
-          <h2>Add new note</h2>
-          <Card elevation={2} className={styles.card}>
-            <form className={styles.form} autoComplete="off" onSubmit={this.handleSubmit}>
-              <TextField
-                id="title"
-                label="Title"
-                className={styles.input}
-                required
-                value={note.title}
-                placeholder="Title"
-                onChange={e => this.handleChange(e, 'title')}
-              />
-              <TextField
-                id="content"
-                label="Content"
-                placeholder="Write your note here"
-                multiline
-                rows="15"
-                variant="outlined"
-                required
-                className={styles.input}
-                value={note.content}
-                onChange={e => this.handleChange(e, 'content')}
-              />
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                size="small"
-                startIcon={<SaveIcon />}
-              >
+      <div className={clsx(className, styles.root)}>
+        <h2>Add new note</h2>
+        <Card elevation={2} className={styles.card}>
+          <form className={styles.form} autoComplete="off" onSubmit={this.handleSubmit}>
+            <TextField
+              id="title"
+              label="Title"
+              className={styles.input}
+              required
+              value={note.title}
+              placeholder="Title"
+              onChange={e => this.handleChange(e, 'title')}
+            />
+            <TextField
+              id="content"
+              label="Content"
+              placeholder="Write your note here"
+              multiline
+              rows="15"
+              variant="outlined"
+              required
+              className={styles.input}
+              value={note.content}
+              onChange={e => this.handleChange(e, 'content')}
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              size="small"
+              startIcon={<SaveIcon />}
+            >
                 Save
-              </Button>
-            </form>
-          </Card>
-        </div>
-      </Container>
+            </Button>
+          </form>
+        </Card>
+      </div>
     );
   }
 }

@@ -30,45 +30,43 @@ const NoteEdit = ({ className, id, title, content, editNote, close }) => {
   };
 
   return (
-    <Container maxWidth="lg">
-      <div className={clsx(className, styles.root)}>
-        <Card elevation={2} className={styles.card}>
-          <form className={styles.form} autoComplete="off">
-            <TextField
-              id="title"
-              label="Title"
-              className={styles.input}
-              required
-              value={note.title}
-              placeholder="Title"
-              onChange={e => handleChange(e, 'title')}
-            />
-            <TextField
-              id="content"
-              label="Content"
-              placeholder="Write your note here"
-              multiline
-              rows="15"
-              variant="outlined"
-              required
-              className={styles.input}
-              value={note.content}
-              onChange={e => handleChange(e, 'content')}
-            />
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              size="small"
-              startIcon={<SaveIcon />}
-              onClick={e => handleSave(e)}
-            >
+    <div className={clsx(className, styles.root)}>
+      <Card elevation={2} className={styles.card}>
+        <form className={styles.form} autoComplete="off">
+          <TextField
+            id="title"
+            label="Title"
+            className={styles.input}
+            required
+            value={note.title}
+            placeholder="Title"
+            onChange={e => handleChange(e, 'title')}
+          />
+          <TextField
+            id="content"
+            label="Content"
+            placeholder="Write your note here"
+            multiline
+            rows="15"
+            variant="outlined"
+            required
+            className={styles.input}
+            value={note.content}
+            onChange={e => handleChange(e, 'content')}
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            size="small"
+            startIcon={<SaveIcon />}
+            onClick={e => handleSave(e)}
+          >
               Save
-            </Button>
-          </form>
-        </Card>
-      </div>
-    </Container>
+          </Button>
+        </form>
+      </Card>
+    </div>
   );
 };
 
