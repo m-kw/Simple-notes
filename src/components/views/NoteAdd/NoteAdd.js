@@ -35,7 +35,7 @@ class NoteAdd extends React.Component {
     const { note } = this.state;
 
     return (
-      <div className={clsx(className, styles.root)}>
+      <div className={clsx(className, styles.root, 'col-sm-12')}>
         <Card elevation={2} className={styles.card}>
           <form className={styles.form} autoComplete="off" onSubmit={this.handleSubmit}>
             <TextField

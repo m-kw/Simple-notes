@@ -29,7 +29,7 @@ const NoteEdit = ({ className, id, title, content, editNote, close }) => {
   };
 
   return (
-    <div className={clsx(className, styles.root)}>
+    <div className={clsx(className, styles.root, 'col-sm-12')}>
       <Card elevation={2} className={styles.card}>
         <form className={styles.form} autoComplete="off">
           <TextField

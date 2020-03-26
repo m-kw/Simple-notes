@@ -32,7 +32,7 @@ const Component = ({ className, id, title, content, removeNote }) => {
   };
 
   return (
-    <div className={clsx(className, styles.root)}>
+    <div className={clsx(className, styles.root, 'col-sm-12')}>
       <Card className={styles.note} elevation={3}>
         <CardHeader
           title={title}
