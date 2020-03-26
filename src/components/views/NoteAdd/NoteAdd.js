@@ -11,7 +11,7 @@ import shortid from 'shortid';
 
 import styles from './NoteAdd.module.scss';
 import { Container } from '@material-ui/core';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 
 class NoteAdd extends React.Component {
   state = {
@@ -29,18 +29,18 @@ class NoteAdd extends React.Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    await this.props.addNote(this.state.note);
-
     this.setState({ isSubmitted: true });
+    await this.props.addNote(this.state.note);
+    this.props.close();
   };
 
   render() {
     const { className } = this.props;
-    const { note, isSubmitted } = this.state;
+    const { note } = this.state;
 
-    if (isSubmitted) {
-      return <Redirect to="/" />;
-    }
+    // if (isSubmitted) {                //--> without db it refreshes the page and removes newly add note; Check if can do it without reloading
+    //   return <Redirect to="/" />;
+    // }
 
     return (
       <Container maxWidth="lg">
@@ -89,6 +89,7 @@ class NoteAdd extends React.Component {
 NoteAdd.propTypes = {
   className: PropTypes.string,
   addNote: PropTypes.func,
+  close: PropTypes.func,
 };
 
 export default NoteAdd;

@@ -12,7 +12,6 @@ import clsx from 'clsx';
 import styles from './Note.module.scss';
 
 const Component = ({ className, id, title, content, removeNote }) => {
-  console.log('id', id);
 
   const handleDelete = (e) => {
     e.preventDefault();

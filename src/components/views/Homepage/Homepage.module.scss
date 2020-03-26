@@ -5,4 +5,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  position: relative;
+
+  .button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
