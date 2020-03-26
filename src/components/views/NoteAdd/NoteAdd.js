@@ -38,7 +38,6 @@ class NoteAdd extends React.Component {
 
     return (
       <div className={clsx(className, styles.root)}>
-        <h2>Add new note</h2>
         <Card elevation={2} className={styles.card}>
           <form className={styles.form} autoComplete="off" onSubmit={this.handleSubmit}>
             <TextField
