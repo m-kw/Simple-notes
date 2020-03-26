@@ -9,7 +9,6 @@ import SaveIcon from '@material-ui/icons/Save';
 import clsx from 'clsx';
 
 import styles from './NoteEdit.module.scss';
-import { Container } from '@material-ui/core';
 
 const NoteEdit = ({ className, id, title, content, editNote, close }) => {
 

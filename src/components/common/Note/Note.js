@@ -6,7 +6,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
-import Modal from '@material-ui/core/Modal';
+import Dialog from '@material-ui/core/Dialog';
 
 import NoteEdit from '../../views/NoteEdit/NoteEditContainer';
 
@@ -57,7 +57,7 @@ const Component = ({ className, id, title, content, removeNote }) => {
         >
           Edit
         </Button>
-        <Modal
+        <Dialog
           aria-labelledby="modal-newNote"
           aria-describedby="modal-add-new-note"
           open={open}
@@ -68,7 +68,7 @@ const Component = ({ className, id, title, content, removeNote }) => {
             title={title}
             content={content}
             close={handleClose} />
-        </Modal>
+        </Dialog>
       </Card>
 
     </div>

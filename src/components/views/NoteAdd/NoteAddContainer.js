@@ -11,4 +11,4 @@ const mapDispatchToProps = dispatch => ({
   addNote: note => dispatch(addNote(note)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(NoteAdd);
+export default connect(mapStateToProps, mapDispatchToProps, null, { forwardRef: true })(NoteAdd);

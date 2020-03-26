@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Container from '@material-ui/core/Container';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import Modal from '@material-ui/core/Modal';
+import Dialog from '@material-ui/core/Dialog';
 
 import { Note } from '../../common/Note/Note';
 import NoteAdd from '../NoteAdd/NoteAddContainer';
@@ -47,14 +47,10 @@ const Homepage = ({ className, notes, removeNote }) => {
         >
           <AddIcon />
         </Fab>
-        <Modal
-          aria-labelledby="modal-newNote"
-          aria-describedby="modal-add-new-note"
-          open={open}
-          onClose={handleClose}
-        >
+
+        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
           <NoteAdd close={handleClose}/>
-        </Modal>
+        </Dialog>
 
       </div>
     </Container>

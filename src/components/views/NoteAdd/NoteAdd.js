@@ -10,8 +10,6 @@ import clsx from 'clsx';
 import shortid from 'shortid';
 
 import styles from './NoteAdd.module.scss';
-import { Container } from '@material-ui/core';
-// import { Redirect } from 'react-router-dom';
 
 class NoteAdd extends React.Component {
   state = {
