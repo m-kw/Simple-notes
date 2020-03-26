@@ -20,7 +20,6 @@ class NoteAdd extends React.Component {
       title: '',
       content: '',
     },
-    isSubmitted: false,
   }
 
   handleChange = async (event, name) => {
@@ -29,7 +28,6 @@ class NoteAdd extends React.Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    this.setState({ isSubmitted: true });
     await this.props.addNote(this.state.note);
     this.props.close();
   };
@@ -37,10 +35,6 @@ class NoteAdd extends React.Component {
   render() {
     const { className } = this.props;
     const { note } = this.state;
-
-    // if (isSubmitted) {                //--> without db it refreshes the page and removes newly add note; Check if can do it without reloading
-    //   return <Redirect to="/" />;
-    // }
 
     return (
       <Container maxWidth="lg">

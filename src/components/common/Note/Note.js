@@ -6,6 +6,9 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Modal from '@material-ui/core/Modal';
+
+import NoteEdit from '../../views/NoteEdit/NoteEditContainer';
 
 import clsx from 'clsx';
 
@@ -16,6 +19,16 @@ const Component = ({ className, id, title, content, removeNote }) => {
   const handleDelete = (e) => {
     e.preventDefault();
     removeNote(id);
+  };
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
   };
 
   return (
@@ -40,9 +53,22 @@ const Component = ({ className, id, title, content, removeNote }) => {
           variant="contained"
           color="secondary"
           className={styles.button}
+          onClick={handleOpen}
         >
           Edit
         </Button>
+        <Modal
+          aria-labelledby="modal-newNote"
+          aria-describedby="modal-add-new-note"
+          open={open}
+          onClose={handleClose}
+        >
+          <NoteEdit
+            id={id}
+            title={title}
+            content={content}
+            close={handleClose} />
+        </Modal>
       </Card>
 
     </div>
